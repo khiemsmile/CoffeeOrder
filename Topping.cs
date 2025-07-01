@@ -22,7 +22,7 @@ namespace CoffeeOrder
     public class Milk : ToppingDecorator
     {
         public Milk(ICoffee coffee) : base(coffee) { }
-        public override string GetDescription() => coffee.GetDescription() + " with Milk";
+        public override string GetDescription() => coffee.GetDescription() + ", Milk";
         public override int GetCost() => coffee.GetCost() + 5000;
     }
 
