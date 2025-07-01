@@ -30,6 +30,18 @@ namespace CoffeeOrder
         public int GetCost() => 45000;
     }
 
+    public class Cappuccino : ICoffee
+    {
+        public string GetDescription() => "Cappuccino";
+        public int GetCost() => 40000;
+    }
+    public class Americano : ICoffee
+    {
+        public string GetDescription() => "Americano";
+        public int GetCost() => 30000;
+    }
+
+
     public class CoffeeFactory
     {
         private Dictionary<string, ICoffee> _cache = new();
@@ -43,6 +55,8 @@ namespace CoffeeOrder
                     "Latte" => new Latte(),
                     "Espresso" => new Espresso(),
                     "Mocha" => new Mocha(),
+                    "Americano" => new Americano(),
+                    "Cappuccino" => new Cappuccino(),
                     _ => throw new Exception("Unknown type")
                 };
             }

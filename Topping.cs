@@ -39,4 +39,17 @@ namespace CoffeeOrder
         public override string GetDescription() => coffee.GetDescription() + ", Caramel";
         public override int GetCost() => coffee.GetCost() + 10000;
     }
+
+    public class Sugar : ToppingDecorator
+    {
+        public Sugar(ICoffee coffee) : base(coffee) { }
+        public override string GetDescription() => coffee.GetDescription() + ", Sugar";
+        public override int GetCost() => coffee.GetCost() + 2000;
+    }
+    public class Vanilla : ToppingDecorator
+    {
+        public Vanilla(ICoffee coffee) : base(coffee) { }
+        public override string GetDescription() => coffee.GetDescription() + ", Vanilla";
+        public override int GetCost() => coffee.GetCost() + 8000;
+    }
 }
