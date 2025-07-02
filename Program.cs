@@ -5,6 +5,12 @@ public class Program
 {
     public static void Main()
     {
+        Console.OutputEncoding = System.Text.Encoding.UTF8; // để đảm bảo toàn bộ output đều dùng UTF-8
+
+        var menu = new MenuProxy();
+        menu.GetMenu("Thân thiết");
+        menu.GetMenu("Mới");
+
         var factory = new CoffeeFactory();
         var latte = factory.GetCoffee("Latte");
         var latteWithToppings = new WhippedCream(new Milk(latte));
